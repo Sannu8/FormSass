@@ -53,9 +53,10 @@ input[type='email']{
     color: #fff;
 }
 
-input:invalid {
+input:invalid{
 border-bottom: 1px solid red;
 }
+
 
 input::placeholder {
   color: #81868c;

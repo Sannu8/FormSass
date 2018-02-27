@@ -6,7 +6,7 @@ class Header extends Component {
       <header>
         <h2>Lets talk</h2>
       <small>Think you have what it takes? Show us.</small>
-      
+
       </header>
     );
 

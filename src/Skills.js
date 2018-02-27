@@ -27,7 +27,8 @@ class Skills extends Component {
 
     this.setState({
       exDatas : newExDatas,
-      cityDatas : newCityDatas
+      cityDatas : newCityDatas,
+
 
     });
   }
@@ -104,10 +105,16 @@ class Skills extends Component {
 
     <tr id="Add">
       <td>
-        <input type="text" value={this.state.inputExperience} onChange={(e) => this.setState({inputExperience : e.target.value})} />
+        <input
+          type="text"
+          value={this.state.inputExperience}
+          onChange={(e) => this.setState({inputExperience : e.target.value})} />
       </td>
       <td>
-        <input type="button" value="Add Experience" onClick={() => this.handleAdd(this.state.inputExperience )} />
+        <input
+          type="button"
+          value="Add Experience"
+          onClick={() => this.handleAdd(this.state.inputExperience )} />
       </td>
 
       <td colSpan="2"></td>
