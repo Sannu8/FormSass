@@ -1,0 +1,12 @@
+@mixin input($width) {
+  background-color: $grey2;
+  color: $white2;
+  width: $width;
+  border: none;
+  border-bottom: 1px solid $lightgrey2;
+}
+
+@mixin floatInput($float, $width) {
+  float: $float;
+  width: $width;
+}

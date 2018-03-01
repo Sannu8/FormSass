@@ -1,0 +1,236 @@
+@import "variables";
+@import "mixins";
+
+/* Body */
+
+body {
+  background-color: $grey2;
+  color: $white2;
+  font-family: sans-serif;
+  margin-right: 20%;
+  margin-left: 20%;
+
+  header {
+    text-align: center;
+  }
+
+  hr {
+    background-color: $blue2;
+    border: none;
+    height: 2px;
+
+    &.greyHr {
+      background-color: $lightgrey2;
+      height: 1px;
+      border: none;
+    }
+  }
+}
+
+/* All input CSS*/
+
+input[type="text"] {
+  @include input(100%);
+}
+
+input[type="email"] {
+  @include input(60%);
+}
+input[type="tel"] {
+  background-color: $grey2;
+  color: $white2;
+  border: none;
+  border-bottom: 1px solid $lightgrey2;
+}
+input[type="url"] {
+  @extend input[type="text"];
+}
+
+input {
+  &:invalid {
+    border-bottom: 1px solid red;
+  }
+
+  &::placeholder {
+    color: $lightgrey2;
+  }
+
+  &.floatLeft {
+    @include floatInput(left, 60%);
+  }
+
+  &.floatRight {
+    @include floatInput(right, 30%);
+  }
+
+  &.location {
+    width: 20%;
+    margin-right: 60px;
+  }
+
+  &.locationend {
+    @include floatInput(right, 20%);
+  }
+}
+
+td {
+  input[type="text"] {
+    width: 100%;
+    margin-right: 20px;
+  }
+
+  input[type="button"] {
+    background-color: $blue2;
+    border-color: $blue2;
+    height: 30px;
+    width: 100px;
+    color: $white2;
+  }
+}
+
+/* The container */
+.containerRadio {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Hide the browser's default radio button */
+input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+}
+
+/* Create a custom radio button */
+.checkmarkRadio {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 200px;
+  background-color: $grey2;
+  display: block;
+  border: 1px solid $lightgrey2;
+  text-align: center;
+}
+
+/* On mouse-over, add a grey background color */
+.containerRadio:hover input ~ .checkmarkRadio {
+  background-color: $lightgrey2;
+}
+
+/* When the radio button is checked, add a blue background */
+.containerRadio input:checked ~ .checkmarkRadio {
+  background-color: $blue2;
+  border: 1px solid $blue2;
+}
+
+.buttonText {
+  padding-top: 10px;
+}
+
+/* Other buttons*/
+
+.submit,
+button:hover {
+  background-color: $blue2;
+  border-color: $blue2;
+  height: 40px;
+  width: 200px;
+  color: $white2;
+}
+
+#firstButton {
+  float: left;
+}
+
+#endButton {
+  float: right;
+}
+
+#middleButton {
+  margin-left: 30px;
+}
+
+/* Text areas*/
+textarea {
+  background-color: $grey2;
+  width: 100%;
+  border-color: 1px solid $lightgrey2;
+  color: $white2;
+
+  &::placeholder {
+    color: $lightgrey2;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+.secondCol {
+  padding-left: 30px;
+}
+
+/* CheckBoxes */
+#checkBoxes {
+  vertical-align: top;
+}
+
+/* The container*/
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  /*Hiding the default checkbox of browser */
+  input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  input:checked ~ .checkmark {
+    background-color: $blue2;
+    border: 1px solid $blue2;
+  }
+
+  /* Show the checkmark when checked */
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+}
+
+/*Creating custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: $grey2;
+  border: 2px solid $lightgrey2;
+
+  /* Style the checkmark/indicator */
+  &:after {
+    left: 6px;
+    top: 2px;
+    width: 3px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    /* Create the checkmark/indicator (hidden when not checked) */
+    content: "";
+    position: absolute;
+    display: none;
+  }
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: $lightgrey2;
+}

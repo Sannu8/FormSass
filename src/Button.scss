@@ -1,0 +1,9 @@
+@import "variables";
+
+input[type="button"] {
+  background-color: $blue2;
+  border-color: $blue2;
+  height: 30px;
+  width: 100%;
+  color: $white2;
+}
